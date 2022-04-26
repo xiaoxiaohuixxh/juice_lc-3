@@ -1,0 +1,50 @@
+// module instr (
+//      input   wire           clk_i_w
+//     ,input   wire           rst_i_w
+
+//     ,input wire             en_i_w
+    
+//     /* verilator lint_off UNUSED */
+//     ,input wire [15:0]      pc_i_w
+//     /* verilator lint_on UNUSED */
+
+//     ,output reg[15:0]       instr_o_r
+// );
+// // 010000000010
+// // https://wchargin.com/lc3web/
+// // http://spacetech.github.io/LC3Simulator/
+//     wire [15:0] rom_r[100:0];
+//     // tb->instr_i_w = (PACK_4bit(1,0,0,1) << 12 ) | (PACK_3bit(1,0,1) << 9 ) | (PACK_3bit(0,1,0) << 6 ) | (PACK_6bit(1,1,1,1,1,1)); // NOT
+//     assign rom_r[0] = {4'b1001, 3'b101 , 3'b010 , 6'b111_111}; // NOT DR=101 SR=010
+//     assign rom_r[1] = {4'b1001, 3'b101 , 3'b101 , 6'b111_111}; // NOT DR=101 SR=101
+//     assign rom_r[2] = {4'b0001, 3'b111 , 3'b010 , 1'b1 , 5'b01_111}; // ADD DR=111 SR=010 imm5=01_111
+//     assign rom_r[3] = {4'b0001, 3'b101 , 3'b010 , 1'b1 , 5'b01_111}; // ADD DR=101 SR=010 imm5=01_111
+//     assign rom_r[4] = {4'b0010, 3'b101 , 9'b000_000_001}; // LD DR=101,label = 01
+//     assign rom_r[5] = {4'b0110, 3'b101 , 3'b001 , 6'b000_001}; // LDR DR=101,BASER=001,Offset6 = 01
+
+
+//     assign rom_r[6] = {4'b0001, 3'b010 , 3'b010 , 1'b1 , 5'b10_111}; // ADD DR=010 SR=010 imm5=10_111
+//     assign rom_r[7] = {4'b0001, 3'b010 , 3'b010 , 1'b1 , 5'b10_101}; // ADD DR=010 SR=010 imm5=10_101
+//     assign rom_r[8] = {4'b0001, 3'b010 , 3'b010 , 1'b1 , 5'b10_101}; // ADD DR=010 SR=010 imm5=10_101
+
+
+//     assign rom_r[9] = {4'b0001, 3'001 , 3'001 , 1'b1 , 5'b10_111}; // ADD DR=001 SR=001 imm5=10_111
+//     assign rom_r[10] = {4'b0001, 3'001 , 3'001 , 1'b1 , 5'b10_101}; // ADD DR=001 SR=001 imm5=10_101
+//     assign rom_r[11] = {4'b0001, 3'001 , 3'001 , 1'b1 , 5'b10_101}; // ADD DR=001 SR=001 imm5=10_101
+
+//     assign rom_r[9] = {4'b0111, 3'b010 , 3'b000 , 6'b000_001}; // STR BASER=000 SR=010 Offset6=1026
+   
+    
+//     always @(posedge clk_i_w or negedge rst_i_w) begin
+//         if(!rst_i_w) begin
+//             instr_o_r <= 16'b0;
+//         end else begin
+//             if(en_i_w) begin
+//                 /* verilator lint_off WIDTH */
+//                 instr_o_r <= rom_r[pc_i_w>>1];
+//                 /* verilator lint_on WIDTH */
+//             end
+//         end
+//     end
+
+// endmodule

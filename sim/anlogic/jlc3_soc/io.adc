@@ -1,0 +1,6 @@
+set_pin_assignment {clk_i_w} { LOCATION = K14; }
+set_pin_assignment {rst_i_w} { LOCATION = K16; }
+set_pin_assignment {txd_o_w} { LOCATION = J13; }
+#set_pin_assignment {led_n[1]} { LOCATION = J14; }
+#set_pin_assignment {led_n[2]} { LOCATION = P13; }
+

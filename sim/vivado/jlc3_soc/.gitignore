@@ -1,0 +1,17 @@
+id_tb
+juicerv_id_test.exe
+*.o
+vlt_dump.vcd
+obj_dir
+rom
+!rom/lc3.asm
+!rom/lc3.bin
+!rom/lc3.txt
+
+zynq7020
+*.log
+.Xil
+*.jou
+*.html
+*.xml
+*.str

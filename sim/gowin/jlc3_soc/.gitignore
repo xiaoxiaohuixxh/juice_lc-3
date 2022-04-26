@@ -1,0 +1,6 @@
+impl
+*.o
+rom
+!rom/lc3.asm
+!rom/lc3.bin
+!rom/lc3.txt

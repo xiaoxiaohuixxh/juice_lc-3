@@ -1,0 +1,5 @@
+regs_tb
+juicerv_regs_test.exe
+*.o
+obj_dir
+vlt_dump.vcd
