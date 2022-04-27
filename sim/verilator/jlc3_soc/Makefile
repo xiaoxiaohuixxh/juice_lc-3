@@ -24,12 +24,12 @@ CPP_SRC := main.cpp
 all: $(JUICERV_TEST)
 # $(VERILATOR) +incdir+../../../rtl/core/ --debug --trace-fst -Wall --cc $^ --exe $(CPP_SRC)
 # $(VERILATOR) +incdir+../../../rtl/core/ --debug --trace -Wall --cc $^ --exe $(CPP_SRC)
-	$(VERILATOR) +incdir+../../../rtl/peripherals +incdir+../../../rtl/core/  --top-module $(MOD_NAME) --trace -Wall --cc $^ --exe $(CPP_SRC)
+	$(VERILATOR) +incdir+../../../rtl/peripherals +incdir+../../../rtl/core/  --top-module $(MOD_NAME) --trace -Wall -Wno-LATCH -Wno-EOFNEWLINE --cc $^ --exe $(CPP_SRC)
 	make -C obj_dir -f V$(MOD_NAME).mk V$(MOD_NAME)
 
 packrom:
 #	../../../../tools/lc3-master/lc3tools/lc3as ./rom/lc3.asm
-	../../../../tools/LC-3_Assembler/nglc3asm ./rom/lc3.asm
+	../../../tools/LC-3_Assembler/nglc3asm ./rom/lc3.asm
 	echo '\n' >> ./rom/lc3.bin
 # ../../../../tools/lc3-master/lc3tools/lc3convert -b16 ./rom/lc3.bin
 

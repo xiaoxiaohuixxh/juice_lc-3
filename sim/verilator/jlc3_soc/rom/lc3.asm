@@ -1,0 +1,39 @@
+.ORIG x000
+
+; define   uart0_waddr   1025
+; define   uart0_raddr   1026
+; define   uart0_saddr   1027
+; define   uart0_seaddr   1028
+
+UARTS
+    LD R1,CHAR
+    LD R2,UART0WADDR
+    LD R4,UART0STAADDR
+    LD R6,UART0SEADDR
+    ADD R7,R7,#1
+    STR R1,R2,#0
+    LEA R1,STARTMSG
+
+UARTSSTR
+    LDR R3,R1,#0
+BRz UARTSSTREND
+    ADD R1,R1,#1
+    STR R3,R2,#0
+    STR R0,R6,#0 ; 关闭
+    STR R7,R6,#0 ; 使能
+    STR R0,R6,#0 ; 关闭
+UARTWAIT
+    LDR R5,R4,#0
+    BRnp UARTWAIT
+    ADD R3,R3,#0
+BRnp UARTSSTR
+
+UARTSSTREND
+BR  UARTS
+
+CHAR .FILL #65
+UART0WADDR .FILL #1025
+STARTMSG .STRINGZ "12345678"
+UART0STAADDR .FILL #1027
+UART0SEADDR  .FILL #1028
+.END
