@@ -1,5 +1,8 @@
 # JUICE LC3
 Author: Li.XiongHui(juicemail@163.com)
+
+# LC-3 instruction datasheet : https://www.andreinc.net/2021/12/01/writing-a-simple-vm-in-less-than-125-lines-of-c
+
 ### 1. clone this project
 ```
 git clone https://gitee.com/xunxiaohuii/juice_lc-3
